@@ -7,9 +7,6 @@
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Make the textbox where everything is typed in. -->
-    <textarea>Type the next Great American Novel here...</textarea>
-     <button onclick="saveTextAsFile()">Save Text</button>
     <script>
         function saveTextAsFile() {
             const textarea = document.getElementById('myTextarea');
@@ -26,5 +23,10 @@
             URL.revokeObjectURL(link.href); // Clean up the object URL
         }
     </script>
+    <button onclick="saveTextAsFile()">Save Text</button>
+    <br>
+    <!-- Make the textbox where everything is typed in. -->
+    <textarea>Type the next Great American Novel here...</textarea>
+   
 </body>
 </html>
