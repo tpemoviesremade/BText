@@ -9,5 +9,22 @@
 <body>
     <!-- Make the textbox where everything is typed in. -->
     <textarea>Type the next Great American Novel here...</textarea>
+     <button onclick="saveTextAsFile()">Save Text</button>
+    <script>
+        function saveTextAsFile() {
+            const textarea = document.getElementById('myTextarea');
+            const textToSave = textarea.value;
+            const filename = 'my_document.txt';
+
+            const blob = new Blob([textToSave], { type: 'text/plain' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = filename;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(link.href); // Clean up the object URL
+        }
+    </script>
 </body>
 </html>
